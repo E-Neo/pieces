@@ -1,0 +1,137 @@
+#+title: SQL is Turing Complete
+#+author: E-Neo
+#+email: e-neo@qq.com
+#+latex_class: article
+#+latex_class_options: [11pt,a4paper]
+#+latex_header: \usepackage{minted}
+* A Simple Example: Factorial
+  The following codes compute 10!
+  (The SQL codes in this article were tested in sqlite3 3.24.0)
+  #+begin_src sql
+WITH RECURSIVE
+  factorial(n, f) AS (
+    VALUES (0, 1)
+    UNION ALL
+    SELECT n + 1, f * (n + 1) FROM factorial where n < 12
+  )
+SELECT f from factorial WHERE n = 10;
+  #+end_src
+* Tag System\cite{wiki:Tag_system}
+  A *tag system* is a deterministic computational model published by Emil Leon Post
+  in 1943 as a simple form of a Post canonical system.
+** Definitions
+   A /tag system/ is a triplet \( (m, A, P) \), where
+   - \( m \) is a positive integer, called the deletion number.
+   - \( A \) is a finite alphabet of symbols, one of which is a special halting symbol.
+     All finite (possibly empty) strings on \( A \) are called words.
+   - \( P \) is a set of production rules, assigning a word \( P(x) \) (called a production)
+     to each symbol \( x \) in \( A \).
+
+   A /halting word/ is a word that either begins with the halting symbol or whose length is less than \( m \).
+
+   A /transformation/ \( t \) (called the tag operation) is defined on the set of non-halting words,
+   such that if \( x \) denotes the leftmost symbol of a word \( S \),
+   then \( t(S) \) is the result of deleting the leftmost \( m \) symbols of \( S \) and
+   appending the word \( P(x) \) on the right.
+   Thus, the system processes the m-symbol head into a tail of variable length,
+   but the generated tail depends solely on the first symbol of the head.
+
+   A /computation/ by a tag system is a finite sequence of words produced by
+   iterating the transformation \( t \),
+   starting with an initially given word and halting when a halting word is produced.
+   (By this definition, a computation is not considered to exist unless
+   a halting word is produced in finitely-many iterations.
+   Alternative definitions allow nonhalting computations,
+   for example by using a special subset of the alphabet to identify words that encode output.)
+
+   The term /m-tag system/ is often used to emphasise the deletion number.
+** Example: A simple 2-tag illustration
+   \begin{verbatim}
+2-tag system
+  Alphabet: {a, b, c, H}
+  Production rules:
+    a  -->  ccbaH
+    b  -->  cca
+    c  -->  cc
+
+Computation
+  Initial word: baa
+                  acca
+                    caccbaH
+                      ccbaHcc
+                        baHcccc
+                          Hcccccca (Halt)
+   \end{verbatim}
+** Turing-completeness of m-tag systems
+   For each \( m > 1 \), the set of m-tag systems is Turing-complete;
+   i.e., for each \( m > 1 \), it is the case that for any given Turing machine *T*,
+   there is an m-tag system that emulates *T*.
+   In particular, a 2-tag system can be constructed to emulate a Universal Turing machine,
+   as was done by Wang 1963 and by Cocke & Minsky 1964.
+** Cyclic tag systems
+   A /cyclic tag system/ is a modification of the original tag system.
+   The alphabet consists of only two symbols, *0* and *1*,
+   and the production rules comprise a list of productions considered sequentially,
+   cycling back to the beginning of the list after considering the "last" production on the list.
+   For each production, the leftmost symbol of the word is examined-if the symbol is *1*,
+   the current production is appended to the right end of the word;
+   if the symbol is *0*, no characters are appended to the word;
+   in either case, the leftmost symbol is then deleted.
+   The system halts if and when the word becomes empty.
+
+   Example
+   \begin{verbatim}
+Cyclic Tag System
+  Productions: (110, 01, 0000)
+
+Computation
+  Initial Word: 1
+    Production         Word
+    ----------         --------------------
+       110             1
+       01               110
+       0000              1001
+       110                0010000
+       01                  010000
+       0000                 10000
+       110                   00000000
+       01                     0000000
+       0000                    000000
+       110                      00000
+       01                        0000
+       0000                       000
+       110                         00
+       01                           0
+       0000                          (Halt)
+   \end{verbatim}
+
+   Cyclic tag systems were created by Matthew Cook and were used in Cook's demonstration
+   that the Rule 110 cellular automaton is universal.
+   A key part of the demonstration was that cyclic tag systems can emulate a Turing-complete
+   class of tag systems.
+* Cyclic Tag System in SQL
+  The idea of following codes comes from PostgreSQL wiki\cite{wiki:Cyclic_Tag_System}.
+  #+begin_src sql
+WITH RECURSIVE
+  product(n, p) AS (
+    VALUES (1, "110"), (2, "01"), (3, "0000")
+  ),
+  word(n, w) AS (
+    VALUES (1, "1")
+    UNION ALL
+    SELECT n + 1,
+           CASE
+             WHEN SUBSTR(w, 1, 1) = "0" THEN SUBSTR(w, 2)
+             ELSE SUBSTR(w, 2) ||
+                  (SELECT p FROM product
+                   WHERE n = (word.n - 1) % (SELECT COUNT(n) FROM product) + 1)
+           END
+    FROM word WHERE n < 20 AND w <> ""
+  )
+SELECT p, w FROM product, word
+WHERE product.n = (word.n - 1) % (SELECT COUNT(n) FROM product) + 1
+ORDER BY word.n;
+  #+end_src
+* References
+  \bibliographystyle{unsrt}
+  \bibliography{refs}
