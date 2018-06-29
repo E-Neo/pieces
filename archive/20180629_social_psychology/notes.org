@@ -1,0 +1,192 @@
+#+title: Social Psychology Notes
+#+author: E-Neo
+#+email: e-neo@qq.com
+#+latex_class: article
+#+latex_class_options: [11pt,a4paper]
+#+latex_header: \usepackage{minted}
+* About This Book
+  #+begin_src bibtex
+@book{myers2012social,
+  title={Social Psychology},
+  author={Myers, D.},
+  isbn={9780078035296},
+  lccn={2012022447},
+  url={http://www.mhhe.com/myers11e},
+  year={2012},
+  publisher={McGraw-Hill Education}
+}
+  #+end_src
+* Summing up
+** Chapter 1: Introducing Social Psychology
+*** What Are Social Psychology's Big Ideas?
+    Social psychology is the scientific study of how people
+    think about, influence, and relate to one another.
+    Its central themes include the following:
+    - How we construe our social worlds
+    - How our social intuitions guide and sometimes deceive us
+    - How our social behavior is shaped by other people,
+      by our attitudes and personalities, and by our biology
+    - How social psychology’s principles apply to our
+      everyday lives and to various other fields of study
+*** How Do Human Values Influence Social Psychology?
+    - Social psychologists' values penetrate their work
+      in obvious ways, such as their choice of research
+      topics and the types of people who are attracted to
+      various fields of study.
+    - They also do this in subtler ways, such as their
+      hidden assumptions when forming concepts, choosing labels,
+      and giving advice.
+    - This penetration of values into science is not a reason
+      to fault social psychology or any other science.
+      That human thinking is seldom dispassionate is
+      precisely why we need systematic observation and
+      experimentation if we are to check our cherished
+      ideas against reality.
+*** I Knew It All Along: Is Social Psychology Simply Common Sense?
+    - Social psychology is criticized for being trivial
+      because it documents things that seem obvious.
+    - Experiments, however, reveal that outcomes are
+      more `obvious` after the facts are known.
+    - This hindsight bias (the /I-knew-it-all-along phenomenon/)
+      often makes people overconfident about the
+      validity of their judgments and predictions.
+*** Research Methods: How Do We Do Social Psychology?
+    - Social psychologists organize their ideas and findings
+      into /theories/. A good theory will distill an array
+      of facts into a much shorter list of predictive principles.
+      We can use those predictions to confirm or
+      modify the theory, to generate new research, and
+      to suggest practical application.
+    - Most social–psychological research is either /correlational/
+      or /experimental/. Correlational studies,
+      sometimes conducted with systematic survey methods,
+      discern the relationship between variables,
+      such as between amount of education and amount
+      of income. Knowing two things are naturally related
+      is valuable information, but it is not a reliable indicator
+      of what is causing what—or whether a third
+      variable is involved.
+    - When possible, social psychologists prefer to conduct
+      experiments that explore cause and effect. By
+      constructing a miniature reality that is under their
+      control, experimenters can vary one thing and then
+      another and discover how those things, separately
+      or in combination, affect behavior. We /randomly assign/
+      participants to an experimental condition,
+      which receives the experimental treatment, or to
+      a control condition, which does not. We can then
+      attribute any resulting difference between the two
+      conditions to the /independent variable/.
+    - In creating experiments, social psychologists sometimes
+      stage situations that engage people’s emotions.
+      In doing so, they are obliged to follow
+      professional ethical guidelines, such as obtaining
+      people's /informed consent/, protecting them from
+      harm, and fully disclosing afterward any temporary
+      deceptions. Laboratory experiments enable
+      social psychologists to test ideas gleaned from life
+      experience and then to apply the principles and
+      findings to the real world.
+** Chapter 2: The Self in a Social World
+*** Spotlights and Illusions: What Do They Teach Us About Ourselves?
+    - Concerned with the impression we make on others,
+      we tend to believe that others are paying more
+      attention to us than they are (the /spotlight effect/).
+    - We also tend to believe that our emotions are more
+      obvious than they are (the /illusion of transparency/).
+*** Self-Concept: Who Am I?
+    - Our sense of self helps organize our thoughts and
+      actions. When we process information with reference
+      to ourselves, we remember it well (the self-reference effect).
+      /Self-concept/ consists of two elements:
+      the /self-schemas/ that guide our processing
+      of self-relevant information, and the /possible selves/
+      that we dream of or dread.
+    - Cultures shape the self, too. Many people in /individualistic/
+      Western cultures assume an /independent self/.
+      Others, often in /collectivistic/ cultures, assume a
+      more /interdependent self/. As Chapter 5 will further
+      explain, these contrasting ideas contribute to cul-
+      tural differences in social behavior.
+    - Our self-knowledge is curiously flawed. We often
+      do not know why we behave the way we do. When
+      influences upon our behavior are not conspicuous
+      enough for any observer to see, we, too, can miss
+      them. The unconscious, implicit processes that control
+      our behavior may differ from our conscious,
+      explicit explanations of it. We also tend to mispredict
+      our emotions. We underestimate the power of
+      our psychological immune systems and thus tend
+      to overestimate the durability of our emotional
+      reactions to significant events.
+*** What Is the Nature and Motivating Power of Self-Esteem?
+    - /Self-esteem/ is the overall sense of self-worth we
+      use to appraise our traits and abilities. Our self-
+      concepts are determined by multiple influences,
+      including the roles we play, the comparisons we
+      make, our social identities, how we perceive others
+      appraising us, and our experiences of success and
+      failure.
+    - Self-esteem motivation influences our cognitive
+      processes: Facing failure, high-self-esteem people
+      sustain their self-worth by perceiving other people
+      as failing, too, and by exaggerating their superiority over others.
+    - Although high self-esteem is generally more beneficial
+      than low, researchers have found that people
+      high in both self-esteem and narcissism are the
+      most aggressive. Someone with a big ego who is
+      threatened or deflated by social rejection is potentially aggressive.
+*** What Does It Mean to Have `Perceived Self-Control`?
+    - Several lines of research show the benefits of a
+      sense of /self-efficacy/ and feelings of control. People
+      who believe in their own competence and effectiveness,
+      and who have an internal /locus of control/,
+      cope better and achieve more than others.
+    - /Learned helplessness/ often occurs when attempts
+      to improve a situation have proven fruitless;
+      self-determination, in contrast, is bolstered by
+      experiences of successfully exercising control and
+      improving one’s situation.
+    - When people are given too many choices, they may
+      be less satisfied with what they have than when
+      offered a smaller range of choices.
+*** What Is Self-Serving Bias?
+    - Contrary to the presumption that most people
+      suffer from low self-esteem or feelings of inferiority,
+      researchers consistently find that most people
+      exhibit a /self-serving bias/. In experiments and everyday life,
+      we often take credit for our successes
+      while blaming failures on the situation.
+    - Most people rate themselves as better than average
+      on subjective, desirable traits and abilities.
+    - We exhibit unrealistic optimism about our futures.
+    - We overestimate the commonality of our opinions
+      and foibles (/false consensus/) while underestimating
+      the commonality of our abilities and virtues (/false uniqueness/).
+    - Such perceptions arise partly from a motive to
+      maintain and enhance self-esteem --- a motive that
+      protects people from depression but contributes to
+      misjudgment and group conflict.
+    - Self-serving bias can be adaptive in that it allows us
+      to savor the good things that happen in our lives.
+      When bad things happen, however, self-serving
+      bias can have the maladaptive effect of causing us
+      to blame others or feel cheated out of something we `deserved.`
+*** How Do People Manage Their Self-Presentation?
+    - As social animals, we adjust our words and actions
+      to suit our audiences. To varying degrees, we note
+      our performance and adjust it to create the impressions we desire.
+    - Such tactics explain examples of false modesty, in
+      which people put themselves down, extol future
+      competitors, or publicly credit others while privately crediting themselves.
+    - Sometimes people will even /self-handicap/ with
+      self-defeating behaviors that protect self-esteem by
+      providing excuses for failure.
+    - /Self-presentation/ refers to our wanting to present
+      a favorable image both to an external audience
+      (other people) and to an internal audience (ourselves).
+      With regard to an external audience, those
+      who score high on a scale of /self-monitoring/ adjust
+      their behavior to each situation, whereas those low
+      in self-monitoring may do so little social adjusting
+      that they seem insensitive.
