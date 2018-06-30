@@ -26,7 +26,7 @@
     - How our social intuitions guide and sometimes deceive us
     - How our social behavior is shaped by other people,
       by our attitudes and personalities, and by our biology
-    - How social psychology’s principles apply to our
+    - How social psychology's principles apply to our
       everyday lives and to various other fields of study
 *** How Do Human Values Influence Social Psychology?
     - Social psychologists' values penetrate their work
@@ -46,7 +46,7 @@
     - Social psychology is criticized for being trivial
       because it documents things that seem obvious.
     - Experiments, however, reveal that outcomes are
-      more `obvious` after the facts are known.
+      more ``obvious'' after the facts are known.
     - This hindsight bias (the /I-knew-it-all-along phenomenon/)
       often makes people overconfident about the
       validity of their judgments and predictions.
@@ -78,7 +78,7 @@
       attribute any resulting difference between the two
       conditions to the /independent variable/.
     - In creating experiments, social psychologists sometimes
-      stage situations that engage people’s emotions.
+      stage situations that engage people's emotions.
       In doing so, they are obliged to follow
       professional ethical guidelines, such as obtaining
       people's /informed consent/, protecting them from
@@ -136,7 +136,7 @@
       high in both self-esteem and narcissism are the
       most aggressive. Someone with a big ego who is
       threatened or deflated by social rejection is potentially aggressive.
-*** What Does It Mean to Have `Perceived Self-Control`?
+*** What Does It Mean to Have ``Perceived Self-Control''?
     - Several lines of research show the benefits of a
       sense of /self-efficacy/ and feelings of control. People
       who believe in their own competence and effectiveness,
@@ -146,7 +146,7 @@
       to improve a situation have proven fruitless;
       self-determination, in contrast, is bolstered by
       experiences of successfully exercising control and
-      improving one’s situation.
+      improving one's situation.
     - When people are given too many choices, they may
       be less satisfied with what they have than when
       offered a smaller range of choices.
@@ -171,7 +171,7 @@
       to savor the good things that happen in our lives.
       When bad things happen, however, self-serving
       bias can have the maladaptive effect of causing us
-      to blame others or feel cheated out of something we `deserved.`
+      to blame others or feel cheated out of something we ``deserved.''
 *** How Do People Manage Their Self-Presentation?
     - As social animals, we adjust our words and actions
       to suit our audiences. To varying degrees, we note
@@ -190,3 +190,166 @@
       their behavior to each situation, whereas those low
       in self-monitoring may do so little social adjusting
       that they seem insensitive.
+** Chapter 3: Social Beliefs and Judgments
+*** How Do We Perceive Our Social Worlds?
+    - Our preconceptions strongly influence how we interpret
+      and remember events. In a phenomenon called
+      /priming/, people's prejudgments have striking effects
+      on how they perceive and interpret information.
+    - Other experiments have planted judgments or false
+      ideas in people's minds /after/ they have been given
+      information. These experiments reveal that as
+      /before-the-fact judgments/ bias our perceptions and
+      interpretations, so /after-the-fact judgments/ bias our recall.
+    - /Belief perseverance/ is the phenomenon in which people
+      cling to their initial beliefs and the reasons why
+      a belief might be true, even when the basis for the
+      belief is discredited.
+    - Far from being a repository for facts about the
+      past, our memories are actually formed when we
+      retrieve them, and they are subject to strong influence
+      by the attitudes and feelings we hold at the
+      time of retrieval.
+*** How Do We Judge Our Social Worlds?
+    - We have an enormous capacity for automatic,
+      efficient, intuitive thinking.
+      Our cognitive efficiency, although generally adaptive,
+      comes at the price of occasional error.
+      Because we are generally unaware of those errors
+      entering our thinking, it is useful to identify ways in which
+      we form and sustain false beliefs.
+    - First, we often overestimate our judgments. This
+      /overconfidence phenomenon/ stems partly from the
+      much greater ease with which we can imagine why
+      we might be right than why we might be wrong.
+      Moreover, people are much more likely to search
+      for information that can confirm their beliefs than
+      for information that can disconfirm them.
+    - Second, when given compelling anecdotes or
+      even useless information, we often ignore useful
+      base-rate information. This is partly due to the later
+      ease of recall of vivid information (the /availability heuristic/).
+    - Third, we are often swayed by illusions of correlation
+      and personal control. It is tempting to perceive
+      correlations where none exist (/illusory correlation/)
+      and to think we can predict or control chance
+      events (the /illusion of control/).
+    - Finally, moods infuse judgments. Good and bad
+      moods trigger memories of experiences associated
+      with those moods. Moods color our interpretations
+      of current experiences. And by distracting us,
+      moods can also influence how deeply or superficially
+      we think when making judgments.
+*** How Do We Explain Our Social Worlds?
+    - /Attribution theory/ involves how we explain people's
+      behavior. /Misattribution/ --- attributing a behavior
+      to the wrong source --- is a major factor in sexual
+      harassment, as a person in power (typically male)
+      interprets friendliness as a sexual come-on.
+    - Although we usually make reasonable attributions,
+      we often commit the /fundamental attribution error/
+      (also called /correspondence bias/) when explaining
+      other people's behavior. We attribute their behavior
+      so much to their inner traits and attitudes that we
+      discount situational constraints, even when those
+      are obvious. We make this attribution error partly
+      because when we watch someone act, that /person/ is
+      the focus of our attention and the situation is relatively invisible.
+      When we act, our attention is usually on what we are reacting to ---
+      the situation is more visible.
+*** How Do Our Expectations of Our Social Worlds Matter?
+    - Our beliefs sometimes take on lives of their own.
+      Usually, our beliefs about others have a basis in
+      reality. But studies of experimenter bias and teacher
+      expectations show that an erroneous belief that certain
+      people are unusually capable (or incapable)
+      can lead teachers and researchers to give those
+      people special treatment. This may elicit superior
+      (or inferior) performance and, therefore, seem to
+      confirm an assumption that is actually false.
+    - Similarly, in everyday life we often get /behavioral confirmation/
+      of what we expect. Told that someone
+      we are about to meet is intelligent and attractive,
+      we may come away impressed with just how intelligent
+      and attractive he or she is.
+*** What Can We Conclude About Social Beliefs and Judgments?
+    Research on social beliefs and judgments reveals how
+    we form and sustain beliefs that usually serve us
+    well but sometimes lead us astray. A balanced social
+    psychology will therefore appreciate both the powers
+    and the perils of social thinking.
+** Chapter 4: Behavior and Attitudes
+*** How Well Do Our Attitudes Predict Our Behavior?
+    - How do our inner /attitudes/ (evaluative reactions
+      toward some object or person, often rooted in
+      beliefs) relate to our external behavior? Although
+      popular wisdom stresses the impact of attitudes
+      on behavior, in fact, attitudes are often poor predictors
+      of behaviors. Moreover, changing people's
+      attitudes typically fails to produce much change in
+      their behavior. These findings inspired social psychologists
+      to find out why we so often fail to play the game we talk.
+    - The answer: Our expressions of attitudes and our
+      behaviors are each subject to many influences.
+      Our attitudes will predict our behavior
+      1. if these ``other influences'' are minimized,
+      2. if the attitude corresponds very closely to the predicted
+         behavior (as in voting studies), and
+      3. if the attitude is potent (because something reminds us of
+         it, or because we acquired it by direct experience).
+      Under these conditions, what we think and feel predicts what we do.
+*** When Does Our Behavior Affect Our Attitudes?
+    - The attitude-action relation also works in the reverse
+      direction: We are likely not only to think ourselves
+      into action but also to act ourselves into a way of
+      thinking. When we act, we amplify the idea underlying
+      what we have done, especially when we feel
+      responsible for it. Many streams of evidence converge
+      on this principle. The actions prescribed by
+      social /roles/ mold the attitudes of the role players.
+    - Similarly, what we say or write can strongly influence
+      attitudes that we subsequently hold.
+    - Research on the /foot-in-the-door phenomenon/ reveals
+      that committing a small act makes people more
+      willing to do a larger one later.
+    - Actions also affect our moral attitudes: That which
+      we have done, even if it is evil, we tend to justify as right.
+    - Similarly, our racial and political behaviors help
+      shape our social consciousness: We not only stand
+      up for what we believe, we also believe in what we
+      have stood up for.
+    - Political and social movements may legislate
+      behavior designed to lead to attitude change on a
+      mass scale.
+*** Why Does Our Behavior Affect Our Attitudes?
+    Three competing theories explain why our actions
+    affect our attitude reports.
+    - /Self-presentation theory/ assumes that people,
+      especially those who self-monitor their behavior hoping
+      to create good impressions, will adapt their attitude
+      reports to appear consistent with their actions. The
+      available evidence confirms that people do adjust
+      their attitude statements out of concern for what
+      other people will think. But it also shows that some
+      genuine attitude change occurs.
+    Two of these theories propose that our actions trigger
+    genuine attitude change.
+    - /Dissonance theory/ explains this attitude change by
+      assuming that we feel tension after acting contrary
+      to our attitudes or making difficult decisions.
+      To reduce that arousal, we internally justify our
+      behavior. Dissonance theory further proposes that
+      the less external justification we have for our undesirable
+      actions, the more we feel responsible for
+      them, and thus the more dissonance arises and the
+      more attitudes change.
+    - /Self-perception theory/ assumes that when our attitudes are weak,
+      we simply observe our behavior and its circumstances,
+      then infer our attitudes.
+      One interesting implication of self-perception theory is
+      the ``overjustification effect'': Rewarding people
+      to do what they like doing anyway can turn their
+      pleasure into drudgery (if the reward leads them to
+      attribute their behavior to the reward).
+    - Evidence supports predictions from both theories,
+      suggesting that each describes what happens under certain conditions.
