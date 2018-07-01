@@ -353,3 +353,165 @@
       attribute their behavior to the reward).
     - Evidence supports predictions from both theories,
       suggesting that each describes what happens under certain conditions.
+** Chapter 5: Genes, Culture, and Gender
+*** How Are We Influenced by Human Nature and Cultural Diversity?
+    - How are we humans alike, how do we differ --- and
+      why? /Evolutionary psychologists/ study how /natural selection/
+      favors behavioral traits that promote the
+      perpetuation of one's genes. Although part of evolution's
+      legacy is our human capacity to learn and
+      adapt (and therefore to differ from one another),
+      the evolutionary perspective highlights the kinship
+      that results from our shared human nature.
+    - The cultural perspective highlights human diversity ---
+      the behaviors and ideas that define a group and
+      that are transmitted across generations.
+      The differences in attitudes and behaviors from one
+      culture to another indicate the extent to which we
+      are the products of cultural norms and roles. Yet
+      cross-cultural psychologists also examine the
+      ``essential universality'' of all people.
+      For example, despite their differences, cultures have a
+      number of norms in common, such as respecting
+      privacy in friendships and disapproving of incest.
+*** How Are Males and Females Alike and Different?
+    - Boys and girls, and men and women, are in many ways alike.
+      Yet their differences attract more attention than their similarities.
+    - Social psychologists have explored /gender/ differences in independence
+      versus connectedness. Women typically do more caring, express more
+      /empathy/ and emotion, and define themselves more
+      in terms of relationships.
+    - Men and women also tend to exhibit differing social
+      dominance and /aggression/. In every known culture
+      on earth, men tend to have more social power and
+      are more likely than women to engage in physical aggression.
+    - Sexuality is another area of marked gender differences.
+      Men more often think about and initiate sex,
+      whereas women's sexuality tends to be inspired by emotional passion.
+*** Evolution and Gender: Doing What Comes Naturally?
+    - Evolutionary psychologists theorize how evolution
+      might have predisposed gender differences in behaviors
+      such as aggression and sexual initiative. Nature's
+      mating game favors males who take sexual initiative
+      toward females --- especially those with physical features
+      suggesting fertility --- and who seek aggressive
+      dominance in competing with other males. Females,
+      who have fewer reproductive chances, place a greater
+      priority on selecting mates offering the resources to
+      protect and nurture their young.
+    - Critics say that evolutionary explanations are
+      sometimes after-the-fact conjectures that fail to
+      account for the reality of cultural diversity; they
+      also question whether enough empirical evidence
+      exists to support evolutionary psychology's theories
+      and are concerned that these theories will reinforce
+      troublesome stereotypes.
+    - Although biology (for example, in the form of male
+      and female hormones) plays an important role in
+      gender differences, social roles are also a major
+      influence. What's agreed is that nature endows us
+      with a remarkable capacity to adapt to differing contexts.
+*** Culture and Gender: Doing as the Culture Says?
+    - The most heavily researched of roles --- /gender roles/ ---
+      reflect biological influence but also illustrate culture's strong impact.
+      The universal tendency has been for males, more than females,
+      to occupy socially dominant roles.
+    - Gender roles show significant variation from culture to culture
+      and from time to time.
+    - Much of culture's influence is transmitted to children by their peers.
+*** What Can We Conclude About Genes, Culture, and Gender?
+    - Biological and cultural explanations need not be
+      contradictory. Indeed, they /interact/. Biological factors operate within
+      a cultural context, and culture builds on a biological foundation.
+    - The great truth about the power of social influence is but half the truth
+      if separated from itscomplementary truth: the power of the person.
+      Persons and situations interact in at least three ways.
+      First, individuals vary in how they interpret and react to
+      a given situation.
+      Second, people choose many of the situations that influence them.
+      Third, people help create their social situations.
+** Chapter 6: Conformity and Obedience
+*** What Is Conformity?
+    /Conformity/ --- changing one's behavior or belief as a result
+    of group pressure --- comes in two forms. /Compliance/ is
+    outwardly going along with the group while inwardly disagreeing;
+    a subset of compliance is /obedience/, compliance with a direct command.
+    /Acceptance/ is believing as well as acting in accord with social pressure.
+*** What Are the Classic Conformity and Obedience Studies?
+    Three classic sets of experiments illustrate
+    how researchers have studied conformity.
+    - Muzafer Sherif observed that others' judgments
+      influenced people's estimates of the movement of
+      a point of light that actually did not move. Norms
+      for ``proper'' answers emerged and survived both
+      over long periods of time and through succeeding
+      generations of research participants.
+    - Solomon Asch had people listen to others' judgments
+      of which of three comparison lines was equal
+      to a standard line and then make the same judgment themselves.
+      When the others unanimously gave a wrong answer,
+      the participants conformed 37 percent of the time.
+    - Stanley Milgram's obedience experiments elicited
+      an extreme form of compliance. Under optimum
+      conditions --- a legitimate, close-at-hand commander,
+      a remote victim, and no one else to exemplify disobedience ---
+      65 percent of his adult male participants
+      fully obeyed instructions to deliver what were supposedly
+      traumatizing electric shocks to a screaming,
+      innocent victim in an adjacent room.
+    - These classic experiments expose the potency of
+      several phenomena. Behavior and attitudes are
+      mutually reinforcing, enabling a small act of evil
+      to foster the attitude that leads to a bigger evil act.
+      The power of the situation can induce good people,
+      faced with dire circumstances, to commit reprehensible acts
+      (although dire situations may produce heroism in others).
+*** What Predicts Conformity?
+    - Using conformity testing procedures, experimenters
+      have explored the circumstances that produce conformity.
+      Certain situations appear to be especially powerful.
+      For example, conformity is affected by the
+      characteristics of the group: People conform most
+      when three or more people, or groups, model the behavior or belief.
+    - Conformity is reduced if the modeled behavior or belief is not unanimous.
+    - Conformity is enhanced by group /cohesion/.
+    - The higher the status of those modeling the behavior or belief,
+      the greater likelihood of conformity.
+    - People also conform most when their responses are
+      public (in the presence of the group).
+    - A prior commitment to a certain behavior or belief
+      increases the likelihood that a person will stick
+      with that commitment rather than conform.
+*** Why Conform?
+    - Experiments reveal two reasons people conform.
+      /Normative influence/ results from a person's desire
+      for acceptance: We want to be liked. The tendency
+      to conform more when responding publicly reflects
+      normative influence.
+    - /Informational influence/ results from others' providing
+      evidence about reality. The tendency to conform more on
+      difficult decision-making tasks reflects informational influence:
+      We want to be right.
+*** Who Conforms?
+    - The question ``Who conforms?'' has produced few
+      definitive answers. Personality scores are poor predictors
+      of specific acts of conformity but better predictors of average
+      conformity. Trait effects sometimes seem strongest in ``weak'' situations
+      where social forces do not overwhelm individual differences.
+    - Although conformity and obedience are universal,
+      different cultures socialize people to be more or less socially responsive.
+    - Social roles involve a certain degree of conformity,
+      and conforming to expectations is an important
+      task when stepping into a new social role.
+*** Do We Ever Want to Be Different?
+    - Social psychology's emphasis on the power of social
+      pressure must be joined by a complementary emphasis
+      on the power of the person. We are not puppets.
+      When social coercion becomes blatant, people often
+      experience /reactance/ --- a motivation to defy the coercion
+      in order to maintain their sense of freedom.
+    - We are not comfortable being greatly different
+      from a group, but neither do we want to appear the
+      same as everyone else. Thus, we act in ways that
+      preserve our sense of uniqueness and individuality.
+      In a group, we are most conscious of how we differ from the others.
