@@ -1,13 +1,17 @@
 import re
 import sys
 import sqlite3
+import requests
 import subprocess
 from datetime import datetime
+from bs4 import BeautifulSoup
 
 
 def create_table(cursor):
     cursor.execute('CREATE TABLE IF NOT EXISTS recite_info '
                    '(word VARCHAR(64), commit_time DATETIME, status INT)')
+    cursor.execute('CREATE TABLE IF NOT EXISTS vocabulary '
+                   '(word VARCHAR(64), description VARCHAR(1024))')
 
 
 def insert(cursor, word, status):
@@ -51,6 +55,17 @@ def _review_common(cursor, query):
         for row in rows:
             word = row[0]
             print('word: {}'.format(word))
+            input('check: ')
+            subprocess.run(['mplayer', '-really-quiet',
+                            'audio/{}.mp3'.format(word)],
+                           stdout=subprocess.PIPE,
+                           stderr=subprocess.PIPE)
+            cursor.execute('SELECT description FROM vocabulary '
+                           'WHERE word = ?',
+                           (word,))
+            t = cursor.fetchone()
+            description = t[0] if t else ""
+            print(description)
             status = input('status: ')
             if status_pattern.fullmatch(status):
                 insert(cursor, word, status)
@@ -82,6 +97,30 @@ def review_by_strength(cursor):
                    "ORDER BY strength LIMIT 50")
 
 
+def look_up(word):
+    r = requests.get('https://www.vocabulary.com/dictionary/{}'.format(word))
+    soup = BeautifulSoup(r.text, 'html.parser')
+    audio = soup.find(class_='audio')['data-audio']
+    d = soup.find(class_='section blurb')
+    r = requests.get('https://audio.vocab.com/1.0/us/{}.mp3'.format(audio))
+    return ('{}\n{}'.format(d.find(class_='short').text.strip(),
+                            d.find(class_='long').text.strip()),
+            r.content)
+
+
+def sync(cursor):
+    cursor.execute('SELECT DISTINCT word FROM recite_info WHERE word NOT IN '
+                   '(SELECT word FROM vocabulary)')
+    rows = cursor.fetchall()
+    for row in rows:
+        word = row[0]
+        description, audio = look_up(word)
+        cursor.execute('INSERT INTO vocabulary VALUES (?,?)',
+                       (word, description))
+        with open('audio/{}.mp3'.format(word), 'wb') as f:
+            f.write(audio)
+
+
 def main():
     options = {
         'recite': recite,
@@ -96,6 +135,12 @@ def main():
     connection = sqlite3.connect('db.sqlite3')
     cursor = connection.cursor()
     create_table(cursor)
+    try:
+        print('sync...', end='', flush=True)
+        sync(cursor)
+        print('done')
+    except Exception as e:
+        print(e)
     options[sys.argv[1]](cursor)
     commit_close(connection)
 
