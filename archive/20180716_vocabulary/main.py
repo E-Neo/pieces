@@ -11,7 +11,9 @@ def create_table(cursor):
     cursor.execute('CREATE TABLE IF NOT EXISTS recite_info '
                    '(word VARCHAR(64), commit_time DATETIME, status INT)')
     cursor.execute('CREATE TABLE IF NOT EXISTS vocabulary '
-                   '(word VARCHAR(64), description VARCHAR(1024))')
+                   '(word VARCHAR(64) PRIMARY KEY, '
+                   'chinese VARCHAR(1024), '
+                   'description VARCHAR(1024))')
 
 
 def insert(cursor, word, status):
@@ -60,11 +62,12 @@ def _review_common(cursor, query):
                             'audio/{}.mp3'.format(word)],
                            stdout=subprocess.PIPE,
                            stderr=subprocess.PIPE)
-            cursor.execute('SELECT description FROM vocabulary '
+            cursor.execute('SELECT chinese, description FROM vocabulary '
                            'WHERE word = ?',
                            (word,))
             t = cursor.fetchone()
-            description = t[0] if t else ""
+            chinese, description = t if t else ""
+            print(chinese)
             print(description)
             status = input('status: ')
             if status_pattern.fullmatch(status):
@@ -76,8 +79,10 @@ def _review_common(cursor, query):
 
 def review_within_24hours(cursor):
     _review_common(cursor,
-                   "SELECT DISTINCT word FROM recite_info "
-                   "WHERE commit_time >= datetime('now', '-1 day')")
+                   "SELECT word FROM "
+                   "(SELECT word, min(commit_time) as initial_time "
+                   "FROM recite_info GROUP BY word) "
+                   "WHERE initial_time >= datetime('now', '-1 day')")
 
 
 def review_forgotten(cursor):
@@ -92,19 +97,30 @@ def review_forgotten(cursor):
 def review_by_strength(cursor):
     _review_common(cursor,
                    "SELECT word FROM "
-                   "(SELECT word, sum(status) as strength "
+                   "(SELECT word, min(commit_time) as initial_time, "
+                   "sum(status) as strength "
                    "FROM recite_info GROUP BY word) "
-                   "ORDER BY strength LIMIT 50")
+                   "ORDER BY strength, initial_time LIMIT 50")
 
 
 def look_up(word):
-    r = requests.get('https://www.vocabulary.com/dictionary/{}'.format(word))
-    soup = BeautifulSoup(r.text, 'html.parser')
-    audio = soup.find(class_='audio')['data-audio']
-    d = soup.find(class_='section blurb')
-    r = requests.get('https://audio.vocab.com/1.0/us/{}.mp3'.format(audio))
-    return ('{}\n{}'.format(d.find(class_='short').text.strip(),
-                            d.find(class_='long').text.strip()),
+    try:
+        r = requests.get('https://cn.bing.com/dict/search?q={}'.format(word))
+        soup = BeautifulSoup(r.text, 'html.parser')
+        defs = soup.find(class_='qdef').find('ul').find_all('li')[:-1]
+        chinese = '\n'.join([x.text for x in defs])
+        r = requests.get('https://www.vocabulary.com/dictionary/''{}'
+                         .format(word))
+        soup = BeautifulSoup(r.text, 'html.parser')
+        audio = soup.find(class_='audio')['data-audio']
+        d = soup.find(class_='section blurb')
+        r = requests.get('https://audio.vocab.com/1.0/us/{}.mp3'.format(audio))
+        short_description = d.find(class_='short').text.strip()
+        long_description = d.find(class_='long').text.strip()
+    except Exception as e:
+        short_description, long_description = '', ''
+    return (chinese,
+            '{}\n{}'.format(short_description, long_description),
             r.content)
 
 
@@ -114,9 +130,9 @@ def sync(cursor):
     rows = cursor.fetchall()
     for row in rows:
         word = row[0]
-        description, audio = look_up(word)
-        cursor.execute('INSERT INTO vocabulary VALUES (?,?)',
-                       (word, description))
+        chinese, description, audio = look_up(word)
+        cursor.execute('INSERT INTO vocabulary VALUES (?,?,?)',
+                       (word, chinese, description))
         with open('audio/{}.mp3'.format(word), 'wb') as f:
             f.write(audio)
 
