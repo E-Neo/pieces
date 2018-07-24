@@ -35,6 +35,7 @@ def spell_correct(word):
 
 def recite(cursor):
     status_pattern = re.compile(r'[01]')
+    count = 0
     try:
         while True:
             word = input('word: ').strip()
@@ -45,14 +46,17 @@ def recite(cursor):
             if not status_pattern.fullmatch(status):
                 break
             insert(cursor, word, status)
+            count += 1
     except KeyboardInterrupt:
-        return
+        return count
+    return count
 
 
-def _review_common(cursor, query):
+def _review(cursor, query):
     cursor.execute(query)
     status_pattern = re.compile(r'[01]')
     rows = cursor.fetchall()
+    count = 0
     try:
         for row in rows:
             word = row[0]
@@ -72,35 +76,11 @@ def _review_common(cursor, query):
             status = input('status: ')
             if status_pattern.fullmatch(status):
                 insert(cursor, word, status)
+                count += 1
                 print('--------------------')
     except KeyboardInterrupt:
-        return
-
-
-def review_within_24hours(cursor):
-    _review_common(cursor,
-                   "SELECT word FROM "
-                   "(SELECT word, min(commit_time) as initial_time "
-                   "FROM recite_info GROUP BY word) "
-                   "WHERE initial_time >= datetime('now', '-1 day')")
-
-
-def review_forgotten(cursor):
-    _review_common(cursor,
-                   "SELECT word FROM "
-                   "(SELECT word, status FROM recite_info "
-                   "WHERE (word, commit_time) "
-                   "IN (SELECT word, max(commit_time) FROM recite_info "
-                   "GROUP BY word)) WHERE status = 0")
-
-
-def review_by_strength(cursor):
-    _review_common(cursor,
-                   "SELECT word FROM "
-                   "(SELECT word, min(commit_time) as initial_time, "
-                   "sum(status) as strength "
-                   "FROM recite_info GROUP BY word) "
-                   "ORDER BY strength, initial_time LIMIT 50")
+        return count
+    return count
 
 
 def look_up(word):
@@ -140,9 +120,36 @@ def sync(cursor):
 def main():
     options = {
         'recite': recite,
-        'review_within_24hours': review_within_24hours,
-        'review_forgotten': review_forgotten,
-        'review_by_strength': review_by_strength
+
+        'review_within_24hours': lambda cursor:
+        _review(cursor,
+                "SELECT word FROM "
+                "(SELECT word, min(commit_time) as initial_time "
+                "FROM recite_info GROUP BY word) "
+                "WHERE initial_time >= datetime('now', '-1 day') "
+                "ORDER BY random()"),
+
+        'review_forgotten': lambda cursor:
+        _review(cursor,
+                "SELECT word FROM "
+                "(SELECT word, status FROM recite_info "
+                "WHERE (word, commit_time) "
+                "IN (SELECT word, max(commit_time) FROM recite_info "
+                "GROUP BY word)) WHERE status = 0 ORDER BY random()"),
+
+        'review_by_strength': lambda cursor:
+        _review(cursor,
+                "SELECT word FROM "
+                "(SELECT word, min(commit_time) as initial_time, "
+                "sum(status) as strength "
+                "FROM recite_info GROUP BY word) "
+                "ORDER BY strength, initial_time LIMIT 50"),
+
+        'review_old': lambda cursor:
+        _review(cursor,
+                "SELECT word FROM "
+                "(SELECT word, max(commit_time) AS last_time "
+                "FROM recite_info GROUP BY word) ORDER BY last_time LIMIT 50")
     }
     if len(sys.argv) == 1:
         for k in options.keys():
@@ -157,7 +164,7 @@ def main():
         print('done')
     except Exception as e:
         print(e)
-    options[sys.argv[1]](cursor)
+    print('total: {}'.format(options[sys.argv[1]](cursor)))
     commit_close(connection)
 
 
