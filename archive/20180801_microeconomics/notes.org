@@ -1,0 +1,47 @@
+#+title: Intermediate Microeconomics
+#+author: E-Neo
+#+email: e-neo@qq.com
+#+latex_class: article
+#+latex_class_options: [11pt,a4paper]
+#+latex_header: \usepackage{minted}
+* BiBTeX
+  #+begin_src bibtex
+@book{varian2014intermediate,
+  title={Intermediate Microeconomics: A Modern Approach (Ninth Edition)},
+  author={Varian, H.R.},
+  isbn={9780393123968},
+  lccn={2015414032},
+  url={https://books.google.com/books?id=jwK5ngEACAAJ},
+  year={2014},
+  publisher={W. W. Norton}
+}
+  #+end_src
+* Summary
+** The Market
+   1. Economics proceeds by making models of social phenomena,
+      which are simplified representations of reality.
+   2. In this task, economists are guided by the optimization principle,
+      which states that people typically try to choose what's best for them,
+      and by the equilibrium principle,
+      which says that prices will adjust until demand and supply are equal.
+   3. The demand curve measures how much people wish to demand at each price,
+      and the supply curve measures how much people wish to supply at each price.
+      An equilibrium price is one where the amount demanded equals the amount supplied.
+   4. The study of how the equilibrium price and quantity change when the
+      underlying conditions change is known as comparative statics.
+   5. An economic situation is Pareto efficient if there is no way to make some
+      group of people better off without making some other group of people worse off.
+      The concept of Pareto efficiency can be used to evaluate different ways of allocating resources.
+** Budget Constraint
+   1. The budget set consists of all bundles of goods that the consumer can
+      afford at given prices and income.
+      We will typically assume that there are only two goods,
+      but this assumption is more general than it seems.
+   2. The budget line is written as \(p_1 x_1 + p_2 x_2 = m\).
+      It has a slope of \(-p_1/p_2\),
+      a vertical intercept of \(m/p_2\), and a horizontal intercept of \(m/p_1\).
+   3. Increasing income shifts the budget line outward.
+      Increasing the price of good 1 makes the budget line steeper.
+      Increasing the price of good 2 makes the budget line flatter.
+   4. Taxes, subsidies, and rationing change the slope and position of the
+      budget line by changing the prices paid by the consumer.
