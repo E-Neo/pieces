@@ -45,3 +45,21 @@
       Increasing the price of good 2 makes the budget line flatter.
    4. Taxes, subsidies, and rationing change the slope and position of the
       budget line by changing the prices paid by the consumer.
+** Preferences
+   1. Economists assume that a consumer can rank various consumption possibilities.
+      The way in which the consumer ranks the consumption bundles describes the
+      consumer's preferences.
+   2. Indifference curves can be used to depict different kinds of preferences.
+   3. Well-behaved preferences are monotonic (meaning more is better) and
+      convex (meaning averages are preferred to extremes).
+   4. The marginal rate of substitution (MRS) measures the slope of the
+      indifference curve. This can be interpreted as how much the consumer is
+      willing to give up of good 2 to acquire more of good 1.
+** Utility
+   1. A utility function is simply a way to represent or summarize a preference ordering.
+      The numerical magnitudes of utility levels have no intrinsic meaning.
+   2. Thus, given any one utility function, any monotonic transformation of it
+      will represent the same preferences.
+   3. The marginal rate of substitution, MRS, can be calculated from the utility function
+      via the formula
+      \(\text{MRS}=\Delta x_2 / \Delta x_1 = -\text{MU}_1 / \text{MU}_2\).

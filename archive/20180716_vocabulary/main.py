@@ -93,12 +93,14 @@ def _review(cursor, query):
             print(chinese)
             print(description)
             status = input('status: ')
-            if status_pattern.fullmatch(status):
-                insert(cursor, word, status)
-                strength = calculate_strength(cursor, word)
-                update_word_strength(cursor, word, strength)
-                count += 1
-                print('--------------------')
+            while not status_pattern.fullmatch(status):
+                print('Invalid status!')
+                status = input('status: ')
+            insert(cursor, word, status)
+            strength = calculate_strength(cursor, word)
+            update_word_strength(cursor, word, strength)
+            count += 1
+            print('--------------------')
     except KeyboardInterrupt:
         print('total: {}'.format(count))
     print('total: {}'.format(count))
@@ -179,6 +181,11 @@ def main():
         'sync': sync,
         'recite': recite,
 
+        'review_random': lambda cursor:
+        _review(cursor,
+                "SELECT DISTINCT word FROM recite_info "
+                "ORDER BY random() LIMIT 50"),
+
         'review_within_24hours': lambda cursor:
         _review(cursor,
                 "SELECT word FROM "
@@ -203,7 +210,7 @@ def main():
                 "JOIN "
                 "(SELECT word, min(commit_time) AS ct FROM recite_info "
                 "GROUP BY word) t2 ON t1.word = t2.word) "
-                "ORDER BY strength, ct LIMIT 50) "
+                "ORDER BY strength, ct DESC LIMIT 50) "
                 "ORDER BY random()"),
 
         'review_old': lambda cursor:
@@ -238,7 +245,8 @@ def main():
               "(SELECT t1.word, t1.strength, t2.ct FROM word_strength t1 "
               "JOIN "
               "(SELECT word, min(commit_time) AS ct FROM recite_info "
-              "GROUP BY word) t2 ON t1.word = t2.word) ORDER BY strength, ct")
+              "GROUP BY word) t2 ON t1.word = t2.word) "
+              "ORDER BY strength, ct DESC")
     }
     if len(sys.argv) == 1:
         for k in options.keys():
