@@ -1,4 +1,4 @@
-#+title: Intermediate Microeconomics
+#+title: Intermediate Microeconomics Notes
 #+author: E-Neo
 #+email: e-neo@qq.com
 #+latex_class: article
@@ -63,3 +63,15 @@
    3. The marginal rate of substitution, MRS, can be calculated from the utility function
       via the formula
       \(\text{MRS}=\Delta x_2 / \Delta x_1 = -\text{MU}_1 / \text{MU}_2\).
+** Choice
+   1. The optimal choice of the consumer is that bundle in the consumer's
+      budget set that lies on the highest indifference curve.
+   2. Typically the optimal bundle will be characterized by the condition that the
+      slope of the indifference curve (the MRS) will equal the slope of the budget line.
+   3. If we observe several consumption choices it may be possible to estimate a
+      utility function that would generate that sort of choice behavior.
+      Such a utility function can be used to predict future choices and to estimate the
+      utility to consumers of new economic policies.
+   4. If everyone faces the same prices for the two goods, then everyone will
+      have the same marginal rate of substitution, and will thus be willing to
+      trade off the two goods in the same way.

@@ -61,7 +61,7 @@ def recite(cursor):
             insert(cursor, word, status)
             count += 1
     except KeyboardInterrupt:
-        print('total: {}'.format(count))
+        pass
     print('total: {}'.format(count))
 
 
@@ -73,9 +73,8 @@ def _review(cursor, query):
     except Exception as e:
         print(e)
     cursor.execute(query)
-    status_pattern = re.compile(r'[01]')
     rows = cursor.fetchall()
-    count = 0
+    count, total = 0, 0
     try:
         for row in rows:
             word = row[0]
@@ -92,18 +91,24 @@ def _review(cursor, query):
             chinese, description = t if t else ""
             print(chinese)
             print(description)
-            status = input('status: ')
-            while not status_pattern.fullmatch(status):
-                print('Invalid status!')
+            while True:
                 status = input('status: ')
+                if status == '1':
+                    count += 1
+                elif status == '0':
+                    pass
+                else:
+                    print('Invalid status!')
+                    continue
+                break
             insert(cursor, word, status)
             strength = calculate_strength(cursor, word)
             update_word_strength(cursor, word, strength)
-            count += 1
+            total += 1
             print('--------------------')
     except KeyboardInterrupt:
-        print('total: {}'.format(count))
-    print('total: {}'.format(count))
+        pass
+    print('status: {}/{}'.format(count, total))
 
 
 def _list(cursor, query):
@@ -186,12 +191,20 @@ def main():
                 "SELECT DISTINCT word FROM recite_info "
                 "ORDER BY random() LIMIT 50"),
 
-        'review_within_24hours': lambda cursor:
+        'review_within_1day': lambda cursor:
         _review(cursor,
                 "SELECT word FROM "
                 "(SELECT word, min(commit_time) as initial_time "
                 "FROM recite_info GROUP BY word) "
-                "WHERE initial_time >= datetime('now', '-1 day') "
+                "WHERE datetime(initial_time) >= datetime('now', '-1 day') "
+                "ORDER BY initial_time"),
+
+        'review_within_1day_random': lambda cursor:
+        _review(cursor,
+                "SELECT word FROM "
+                "(SELECT word, min(commit_time) as initial_time "
+                "FROM recite_info GROUP BY word) "
+                "WHERE datetime(initial_time) >= datetime('now', '-1 day') "
                 "ORDER BY random()"),
 
         'review_forgotten': lambda cursor:
@@ -208,7 +221,18 @@ def main():
                 "(SELECT word FROM "
                 "(SELECT t1.word, t1.strength, t2.ct FROM word_strength t1 "
                 "JOIN "
-                "(SELECT word, min(commit_time) AS ct FROM recite_info "
+                "(SELECT word, max(commit_time) AS ct FROM recite_info "
+                "GROUP BY word) t2 ON t1.word = t2.word) "
+                "ORDER BY strength, ct LIMIT 50) "
+                "ORDER BY random()"),
+
+        'review_recent': lambda cursor:
+        _review(cursor,
+                "SELECT word FROM"
+                "(SELECT word FROM "
+                "(SELECT t1.word, t1.strength, t2.ct FROM word_strength t1 "
+                "JOIN "
+                "(SELECT word, max(commit_time) AS ct FROM recite_info "
                 "GROUP BY word) t2 ON t1.word = t2.word) "
                 "ORDER BY strength, ct DESC LIMIT 50) "
                 "ORDER BY random()"),
@@ -224,12 +248,12 @@ def main():
         _list(cursor,
               "SELECT DISTINCT word from recite_info"),
 
-        'list_within_24hours': lambda cursor:
+        'list_within_1day': lambda cursor:
         _list(cursor,
               "SELECT word FROM "
               "(SELECT word, min(commit_time) as initial_time "
               "FROM recite_info GROUP BY word) "
-              "WHERE initial_time >= datetime('now', '-1 day') "),
+              "WHERE datetime(initial_time) >= datetime('now', '-1 day') "),
 
         'list_forgotten': lambda cursor:
         _list(cursor,
