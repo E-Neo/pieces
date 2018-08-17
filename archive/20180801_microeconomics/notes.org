@@ -75,3 +75,17 @@
    4. If everyone faces the same prices for the two goods, then everyone will
       have the same marginal rate of substitution, and will thus be willing to
       trade off the two goods in the same way.
+** Demand
+   1. The consumer's demand function for a good will in general depend on
+      the prices of all goods and income.
+   2. A normal good is one for which the demand increases when income increases.
+      An inferior good is one for which the demand decreases when income increases.
+   3. An ordinary good is one for which the demand decreases when its price increases.
+      A Giffen good is one for which the demand increases when its price increases.
+   4. If the demand for good 1 increases when the price of good 2 increases,
+      then good 1 is a substitute for good 2. If the demand for good 1 decreases
+      in this situation, then it is a complement for good 2.
+   5. The inverse demand function measures the price at which a given quantity
+      will be demanded. The height of the demand curve at a given level
+      of consumption measures the marginal willingness to pay for an additional
+      unit of the good at that consumption level.
