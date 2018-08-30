@@ -48,7 +48,7 @@ dropJ n jl@(Single _ _)
 dropJ n jl@(Append m l1 l2)
   | n <= 0 = jl
   | n < s1 = dropJ n l1 +++ l2
-  | n < s0 = dropJ n l2
+  | n < s0 = dropJ (n - s1) l2
   | otherwise = Empty
   where s0 = getSize . size $ m
         s1 = getSize . size . tag $ l1
@@ -77,6 +77,6 @@ instance Buffer (JoinList (Score, Size) String) where
   fromString = foldl1 (+++) . map scoreLine' . lines
     where scoreLine' s = Single (scoreString s, Size $ length s) s
   line = indexJ
-  replaceLine i s b = takeJ i b +++ fromString s +++ dropJ i b
+  replaceLine i s b = takeJ i b +++ fromString s +++ dropJ (i + 1) b
   numLines = getSize . snd . tag
-  value = getScore . fst .tag
+  value = getScore . fst . tag
