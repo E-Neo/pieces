@@ -1,0 +1,5 @@
+cache/
+plot_img/
+_minted-*/
+chapter[0-9].pdf
+chapter[0-9].tex

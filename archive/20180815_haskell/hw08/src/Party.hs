@@ -23,9 +23,9 @@ treeFold f (Node r s) = f r (map (treeFold f) s)
 
 -- Exercise 3
 nextLevel :: Employee -> [(GuestList, GuestList)] -> (GuestList, GuestList)
-nextLevel x l = (maximum' $ map fst l,
-                 maximum' $ map (glCons x . snd) l)
-  where maximum' = foldl moreFun mempty
+nextLevel boss results = (withBoss, withoutBoss)
+  where withBoss = glCons boss (mconcat (map snd results))
+        withoutBoss = mconcat (map (uncurry moreFun) results)
 
 -- Exercise 4
 maxFun :: Tree Employee -> GuestList

@@ -1,0 +1,52 @@
+#+title: Chapter 1. Introduction
+#+author: 崔延宣
+#+latex_class: article
+#+latex_class_options: [11pt,a4paper]
+#+latex_header: \usepackage{xeCJK}
+#+latex: \setmintedinline{bgcolor=bg}
+#+options: toc:nil
+* Essential Libraries and Tools
+  Import necessary libraries first:
+  #+begin_src python :session python :results silent
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import pandas as pd
+    import mglearn
+  #+end_src
+* Classifying Iris Species
+  Load the Iris dataset:
+  #+begin_src python :session python :results silent
+    from sklearn.datasets import load_iris
+    iris_dataset = load_iris()
+  #+end_src
+  Split the labeled data into training set and test set:
+  #+begin_src python :session python :results silent
+    from sklearn.model_selection import train_test_split
+    X_train, X_test, y_train, y_test = train_test_split(
+        iris_dataset['data'], iris_dataset['target'], random_state=0)
+  #+end_src
+  Do pair plot:
+  #+begin_src python :session python :results silent
+    iris_dataframe = pd.DataFrame(X_train, columns=iris_dataset.feature_names)
+    pd.plotting.scatter_matrix(
+        iris_dataframe, c=y_train, figsize=(15, 15), marker='o',
+        hist_kwds={'bins': 20}, s=60, alpha=.8, cmap=mglearn.cm3)
+    plt.savefig('plot_img/pair_plot.pdf')
+  #+end_src
+  #+caption: Pair plot of the Iris dataset, colored by class label
+  #+attr_latex: :placement [H]
+  [[file:plot_img/pair_plot.pdf]]
+  k-Nearest Neighbors:
+  #+begin_src python :session python :results silent
+    from sklearn.neighbors import KNeighborsClassifier
+    knn = KNeighborsClassifier(n_neighbors=1)
+    knn.fit(X_train, y_train)
+  #+end_src
+  Evaluate the model:
+  #+name: py:score
+  #+begin_src python :session python :results output :exports both
+    print('Test set score: {:.2f}'.format(knn.score(X_test, y_test)))
+  #+end_src
+  Output:
+  #+results: py:score
+  : Test set score: 0.97
