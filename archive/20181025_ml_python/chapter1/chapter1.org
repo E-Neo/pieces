@@ -3,7 +3,8 @@
 #+latex_class: article
 #+latex_class_options: [11pt,a4paper]
 #+latex_header: \usepackage{xeCJK}
-#+latex: \setmintedinline{bgcolor=bg}
+#+latex: \definecolor{bg}{rgb}{0.95,0.95,0.95}
+#+latex: \setminted[]{bgcolor=bg,fontsize=\footnotesize}
 #+options: toc:nil
 * Essential Libraries and Tools
   Import necessary libraries first:
